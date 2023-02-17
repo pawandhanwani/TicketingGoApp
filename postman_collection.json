@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "aee61868-d1d3-49ab-9659-703890634ed7",
+		"name": "Tickets Go App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Moderator1\",\n    \"email\":\"moderator1@gmail.com\",\n    \"password\":\"moderator1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"pawan5@gmail.com\",\n    \"password\":\"pawan5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ticket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzY0Nzk5NzcsInVzZXIiOjExfQ.-jJvnNH_Ss4FKS3pCTpzehEgNFoXtP1RvNkD3N1oi5o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"Get Headphones\",\n    \"description\":\"Get headphones to attend conference calls\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ticket/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ticket",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Tickets",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ticket",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzY1MjU0NjYsInVzZXIiOjExfQ.LDzzv20o0xHyJp7ugdld9WG_byW7aB7ENjbMhKSPaVQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/ticket/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ticket",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Ticket",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzY1MjU0NjYsInVzZXIiOjExfQ.LDzzv20o0xHyJp7ugdld9WG_byW7aB7ENjbMhKSPaVQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/ticket/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ticket",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzY1MzM4NTYsInVzZXIiOjExfQ.aY5OPWNCMQSfisHIUzoy5-ecuCr3M-w5KTY468sXPo8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tickedid\":5,\n    \"comment\":\"we dont provide access to Docker anymore\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/comment/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comment",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzY1NDE0MzAsInVzZXIiOjExfQ.JXiVKJHBwoCVZN2y6tKQpd_C3qG4xXChOIBR8Qnd8KM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/comment/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Types",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Type",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzY1Njg3NjgsInVzZXIiOjEzfQ.zqcdJMZ-fxlrxhSiMAthQ9tdza7QWJx_5mRtRTJg1u0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"moderator1@gmail.com\",\n    \"usertype\":\"MODERATOR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/update/user/type",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"update",
+						"user",
+						"type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Ticket",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzY1NzE5NDIsInVzZXIiOjEzfQ.1bw6T7N4r8NKd5YaMJl3auALINM8mBRrcxwnzk_8CLM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"assignto\":\"moderator1@gmail.com\",\n    \"ticketid\":5\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/assign/ticket",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"assign",
+						"ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Ticket Status",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzY1NzM2MDYsInVzZXIiOjE0fQ.8kghZWlGCa3uwuFZb4ubCzxJbxiL14mEPZ7-gFQe11w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ticketid\":5,\n    \"ticketstatus\":\"WONT_DO\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/moderator/update/ticket/status",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"moderator",
+						"update",
+						"ticket",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/system/ticket/status/types",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"system",
+						"ticket",
+						"status",
+						"types"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
